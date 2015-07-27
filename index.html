@@ -6,7 +6,7 @@
     <script src="./vendor/angular/angular.min.js"></script>
     <script src="./vendor/leaflet/leaflet.min.js"></script>
     <script src="./app/app.js"></script>
-    <script src="./app/components/graph-visualization.directive.js"></script>
+    <script src="app/components/map-visualization.directive.js"></script>
     <script src="./app/components/vis-description.directive.js"></script>
     <link rel="stylesheet" type="text/css" href="./vendor/leaflet/leaflet.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -16,7 +16,10 @@
 <body ng-app="crimeApp">
     <div class="Content">
         <vis-description></vis-description>
-        <graph-visualization></graph-visualization>
+        <!-- mapVisUrl lets us pass configure the url to change the data the visualization uses. -->
+        <map-visualization
+                map-vis-url="https://data.seattle.gov/resource/3k2p-39jp.json?$where=within_circle(incident_location, 47.5952, -122.3316, 1609.34)"
+        ></map-visualization>
     </div>
 </body>
 </html>
